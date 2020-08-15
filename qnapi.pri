@@ -1,6 +1,8 @@
 unix:!macx {
     OUTDIR = $${PWD}
-    INSTALL_PREFIX = /usr
+    INSTALL_PREFIX = $$PREFIX
+    isEmpty(INSTALL_PREFIX):INSTALL_PREFIX = $$(PREFIX)
+    isEmpty(INSTALL_PREFIX):INSTALL_PREFIX = /usr
 }
 
 macx {
